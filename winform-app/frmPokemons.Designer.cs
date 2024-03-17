@@ -83,7 +83,7 @@ namespace winform_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(959, 425);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarPokemon);

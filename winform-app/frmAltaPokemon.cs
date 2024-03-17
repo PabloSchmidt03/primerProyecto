@@ -24,7 +24,6 @@ namespace winform_app
             InitializeComponent();
             this.pokemon = pokemon;
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Pokemon pokemon = new Pokemon();
@@ -63,6 +62,15 @@ namespace winform_app
             {
                 cboTipo.DataSource = elementoNegocio.listar();
                 cboDebilidad.DataSource = elementoNegocio.listar();
+
+                if(pokemon!=null)
+                {
+                    nudNumero.Value = pokemon.Numero;
+                    txbDescripcion.Text = pokemon.Descripcion;
+                    txbImagen.Text = pokemon.UrlImagen;
+                    txbNombre.Text = pokemon.Nombre;
+                }
+
             }
             catch (Exception)
             {
