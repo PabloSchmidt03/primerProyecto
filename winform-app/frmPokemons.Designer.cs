@@ -77,6 +77,7 @@ namespace winform_app
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar Pokemon";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmPokemons
             // 

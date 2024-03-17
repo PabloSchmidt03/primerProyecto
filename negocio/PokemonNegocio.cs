@@ -26,7 +26,7 @@ namespace negocio
                 comando.Connection = conexion;
 
                 conexion.Open();
-                lector = comando.ExecuteReader();
+                lector = comando.ExecuteReader();  
 
                 while (lector.Read())
                 {
@@ -82,7 +82,10 @@ namespace negocio
             }
         }
 
-        public void modificar(Pokemon modificar) { }
+        public void modificar(Pokemon modificar) 
+        {
+            
+        }
 
     }
 }
