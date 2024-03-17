@@ -61,14 +61,21 @@ namespace winform_app
         private void cargar()
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            listaPokemon = negocio.listar();
-            dgvPokemons.DataSource = listaPokemon;
-            dgvPokemons.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaPokemon[0].UrlImagen);
 
-            ElementoNegocio elementoNegocio = new ElementoNegocio();
-            listaElementos = elementoNegocio.listar();
-            dgvElementos.DataSource = listaElementos;
+            try
+            {
+                listaPokemon = negocio.listar();
+                dgvPokemons.DataSource = listaPokemon;
+                dgvPokemons.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaPokemon[0].UrlImagen);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
     }
 }

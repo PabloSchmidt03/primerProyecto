@@ -30,6 +30,7 @@ namespace winform_app
                 pokemon.Numero = (int)nudNumero.Value;
                 pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
+                pokemon.UrlImagen = txbImagen.Text;
 
                 negocio.agregar(pokemon);
                 MessageBox.Show("Pokemon agregado exitosamente!!");
@@ -63,6 +64,23 @@ namespace winform_app
                 throw;
             }
 
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxAltaPokemon.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxAltaPokemon.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+        private void txbImagen_TextChanged(object sender, EventArgs e)
+        {
+            cargarImagen(txbImagen.Text);
+            
         }
     }
 }

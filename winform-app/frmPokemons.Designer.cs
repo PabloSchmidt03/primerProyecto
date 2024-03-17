@@ -31,13 +31,10 @@ namespace winform_app
         {
             this.dgvPokemons = new System.Windows.Forms.DataGridView();
             this.pbxPokemon = new System.Windows.Forms.PictureBox();
-            this.dgvElementos = new System.Windows.Forms.DataGridView();
-            this.lblElementos = new System.Windows.Forms.Label();
-            this.lblPokemon = new System.Windows.Forms.Label();
             this.btnAgregarPokemon = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvElementos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPokemons
@@ -48,13 +45,13 @@ namespace winform_app
             this.dgvPokemons.MultiSelect = false;
             this.dgvPokemons.Name = "dgvPokemons";
             this.dgvPokemons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPokemons.Size = new System.Drawing.Size(610, 232);
+            this.dgvPokemons.Size = new System.Drawing.Size(517, 232);
             this.dgvPokemons.TabIndex = 0;
             this.dgvPokemons.SelectionChanged += new System.EventHandler(this.dgvPokemons_SelectionChanged);
             // 
             // pbxPokemon
             // 
-            this.pbxPokemon.Location = new System.Drawing.Point(800, 55);
+            this.pbxPokemon.Location = new System.Drawing.Point(626, 55);
             this.pbxPokemon.Name = "pbxPokemon";
             this.pbxPokemon.Size = new System.Drawing.Size(240, 232);
             this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,52 +59,33 @@ namespace winform_app
             this.pbxPokemon.TabStop = false;
             this.pbxPokemon.Click += new System.EventHandler(this.pbxPokemon_Click);
             // 
-            // dgvElementos
-            // 
-            this.dgvElementos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvElementos.Location = new System.Drawing.Point(92, 390);
-            this.dgvElementos.Name = "dgvElementos";
-            this.dgvElementos.Size = new System.Drawing.Size(240, 150);
-            this.dgvElementos.TabIndex = 2;
-            // 
-            // lblElementos
-            // 
-            this.lblElementos.AutoSize = true;
-            this.lblElementos.Location = new System.Drawing.Point(89, 364);
-            this.lblElementos.Name = "lblElementos";
-            this.lblElementos.Size = new System.Drawing.Size(100, 13);
-            this.lblElementos.TabIndex = 3;
-            this.lblElementos.Text = "Tabla de elementos";
-            // 
-            // lblPokemon
-            // 
-            this.lblPokemon.AutoSize = true;
-            this.lblPokemon.Location = new System.Drawing.Point(89, 28);
-            this.lblPokemon.Name = "lblPokemon";
-            this.lblPokemon.Size = new System.Drawing.Size(81, 13);
-            this.lblPokemon.TabIndex = 4;
-            this.lblPokemon.Text = "Tabla pokemon";
-            // 
             // btnAgregarPokemon
             // 
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(275, 305);
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(116, 293);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
-            this.btnAgregarPokemon.Size = new System.Drawing.Size(233, 40);
+            this.btnAgregarPokemon.Size = new System.Drawing.Size(207, 40);
             this.btnAgregarPokemon.TabIndex = 5;
             this.btnAgregarPokemon.Text = "Agregar Pokemon";
             this.btnAgregarPokemon.UseVisualStyleBackColor = true;
             this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemon_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(381, 293);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(207, 40);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Text = "Modificar Pokemon";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // frmPokemons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1269, 637);
+            this.ClientSize = new System.Drawing.Size(959, 425);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarPokemon);
-            this.Controls.Add(this.lblPokemon);
-            this.Controls.Add(this.lblElementos);
-            this.Controls.Add(this.dgvElementos);
             this.Controls.Add(this.pbxPokemon);
             this.Controls.Add(this.dgvPokemons);
             this.Name = "frmPokemons";
@@ -116,9 +94,7 @@ namespace winform_app
             this.Load += new System.EventHandler(this.frmPokemons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvElementos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -126,10 +102,8 @@ namespace winform_app
 
         private System.Windows.Forms.DataGridView dgvPokemons;
         private System.Windows.Forms.PictureBox pbxPokemon;
-        private System.Windows.Forms.DataGridView dgvElementos;
-        private System.Windows.Forms.Label lblElementos;
-        private System.Windows.Forms.Label lblPokemon;
         private System.Windows.Forms.Button btnAgregarPokemon;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

@@ -34,7 +34,11 @@ namespace negocio
                     aux.Numero = lector.GetInt32(0);
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    aux.UrlImagen = (string)lector["UrlImagen"];
+                    //Haciendo que no se rompa con null
+                    if (!(lector["UrlImagen"] is DBNull))
+                        aux.UrlImagen = (string)lector["UrlImagen"];
+
+
                     aux.Tipo = new Elemento();
                     aux.Tipo.Descripcion = (string)lector["Tipo"];
                     aux.Debilidad = new Elemento();
@@ -60,10 +64,11 @@ namespace negocio
             {
 
                 //esta manera es super artesanal
-                acceso.setearConsulta("Insert into POKEMONS (Numero, Nombre, Descripcion, Activo, idtipo,iddebilidad)values(" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1,@idtipo,@iddebilidad)");
+                acceso.setearConsulta("Insert into POKEMONS (Numero, Nombre, Descripcion, Activo, idtipo,iddebilidad,UrlImagen)values(" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1,@idtipo,@iddebilidad,@urlimagen)");
                 //esta manera me parece mejor, agregando parametros
                 acceso.setearParametro("@idtipo", nuevo.Tipo.Id);
-                acceso.setearParametro("@idtdebilidad", nuevo.Debilidad.Id);
+                acceso.setearParametro("@iddebilidad", nuevo.Debilidad.Id);
+                acceso.setearParametro("@urlimagen", nuevo.UrlImagen);
                 acceso.ejecutarAccion();
             }
             catch (Exception)
