@@ -91,7 +91,7 @@ namespace winform_app
             this.Controls.Add(this.dgvPokemons);
             this.Name = "frmPokemons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MiPrimerWinForm";
+            this.Text = "Listado Pokemon";
             this.Load += new System.EventHandler(this.frmPokemons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).EndInit();

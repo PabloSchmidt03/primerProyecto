@@ -179,7 +179,7 @@
             // 
             this.pbxAltaPokemon.Location = new System.Drawing.Point(334, 59);
             this.pbxAltaPokemon.Name = "pbxAltaPokemon";
-            this.pbxAltaPokemon.Size = new System.Drawing.Size(283, 220);
+            this.pbxAltaPokemon.Size = new System.Drawing.Size(268, 220);
             this.pbxAltaPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAltaPokemon.TabIndex = 14;
             this.pbxAltaPokemon.TabStop = false;

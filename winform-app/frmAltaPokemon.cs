@@ -26,10 +26,13 @@ namespace winform_app
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Pokemon pokemon = new Pokemon();
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
+                if(pokemon == null)
+                {
+                    pokemon = new Pokemon();
+                }
                 pokemon.Nombre = txbNombre.Text;
                 pokemon.Descripcion = txbDescripcion.Text;
                 pokemon.Numero = (int)nudNumero.Value;
@@ -37,8 +40,19 @@ namespace winform_app
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
                 pokemon.UrlImagen = txbImagen.Text;
 
-                negocio.agregar(pokemon);
-                MessageBox.Show("Pokemon agregado exitosamente!!");
+                if (pokemon.Id != 0)
+                {
+                    negocio.modificar(pokemon);
+                    MessageBox.Show("Pokemon agregado exitosamente!!");
+                }
+
+                else
+                {
+                    negocio.agregar(pokemon);
+                    MessageBox.Show("Pokemon agregado exitosamente!!");
+                }
+                
+                
                 Close();
             }
             catch (Exception ex)
@@ -61,14 +75,23 @@ namespace winform_app
             try
             {
                 cboTipo.DataSource = elementoNegocio.listar();
+                cboTipo.ValueMember = "Id";
+                cboTipo.DisplayMember = "Descripcion";
                 cboDebilidad.DataSource = elementoNegocio.listar();
+                cboDebilidad.ValueMember = "Id";
+                cboDebilidad.DisplayMember = "Descripcion";
 
-                if(pokemon!=null)
+
+                if (pokemon!=null)
                 {
+                    btnAgregar.Text = "Actualizar";
                     nudNumero.Value = pokemon.Numero;
                     txbDescripcion.Text = pokemon.Descripcion;
                     txbImagen.Text = pokemon.UrlImagen;
                     txbNombre.Text = pokemon.Nombre;
+                    cboTipo.SelectedValue = pokemon.Tipo.Id;
+                    cboDebilidad.SelectedValue = pokemon.Debilidad.Id;
+
                 }
 
             }
